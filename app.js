@@ -203,10 +203,7 @@
       };
     }
 
-    // Backup missing alone → maintenance / safety
-    var backupFail = getAnswer("backup-exists") === "fail";
-    var recentFail = getAnswer("recent-changes") === "fail";
-
+    // Multi-step enquiry failures take priority over maintenance flags.
     if (enquiryFail >= 2 || (enquiryFail >= 1 && enquiryUnsure >= 1)) {
       return {
         text: "Several enquiry-path items failed or are uncertain (submit, response, email, SMTP, validation, thank-you, or CRM). Investigate the form → mail → inbox chain. A bounded Enquiry Path Repair may fit if one clear defect can be agreed.",
@@ -214,24 +211,19 @@
       };
     }
 
+    // Isolated enquiry Fail → Quick Fix even if backup/recent also flagged.
+    if (enquiryFail === 1) {
+      return {
+        text: "One clear Fail on the enquiry path. Narrow that single issue (reproduce, note plugin/theme, capture any error). A WordPress Quick Fix may fit a small defined problem; use Enquiry Path Repair if the defect spans form + mail delivery.",
+        highlight: "49"
+      };
+    }
+
+    // Maintenance-only (no enquiry Fail)
     if (maintFail >= 1 && enquiryFail === 0) {
       return {
         text: "Issues centre on recent changes and/or backup readiness rather than a confirmed form defect. Prefer a careful Update & Safety Check (or restore from backup) before changing live mail/form settings.",
         highlight: "59"
-      };
-    }
-
-    if (backupFail || recentFail) {
-      return {
-        text: "Recent changes or missing backup are flagged. Stabilise backups and review what changed before deeper form surgery. Update & Safety Check is the restrained next step if you want help with that pass.",
-        highlight: "59"
-      };
-    }
-
-    if (enquiryFail === 1 && failed.length === 1) {
-      return {
-        text: "One clear Fail on the enquiry path. Narrow that single issue (reproduce, note plugin/theme, capture any error). A WordPress Quick Fix may fit a small defined problem; use Enquiry Path Repair if the defect spans form + mail delivery.",
-        highlight: "49"
       };
     }
 
