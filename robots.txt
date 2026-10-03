@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://mamonasr789-png.github.io/quietforgetools-wp-enquiry-checklist/sitemap.xml
