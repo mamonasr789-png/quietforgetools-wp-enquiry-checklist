@@ -278,25 +278,33 @@
     lines.push("Diagnostic report (manual checklist — not an automatic scan)");
     lines.push("Generated: " + new Date().toISOString());
     lines.push("");
-    lines.push("=== RESULTS BY ITEM ===");
+    lines.push("=== CHECK RESULT ===");
     for (var i = 0; i < CHECKS.length; i++) {
       var c = CHECKS[i];
       lines.push((i + 1) + ". [" + stateLabel(getAnswer(c.id)) + "] " + c.title);
     }
     lines.push("");
-    lines.push("=== FAILED ===");
+    lines.push("=== FAILED STAGE(S) ===");
     if (failed.length === 0) lines.push("(none)");
     else {
       for (var f = 0; f < failed.length; f++) lines.push("- " + failed[f].title);
     }
     lines.push("");
-    lines.push("=== NOT SURE ===");
+    lines.push("=== NOT-SURE STAGE(S) ===");
     if (unsure.length === 0) lines.push("(none)");
     else {
       for (var u = 0; u < unsure.length; u++) lines.push("- " + unsure[u].title);
     }
     lines.push("");
-    lines.push("=== RECOMMENDED NEXT INVESTIGATION ===");
+    lines.push("=== TEST CONTEXT ===");
+    lines.push("(Fill before pasting into email — no passwords, API keys, or payment data)");
+    lines.push("Site URL: ");
+    lines.push("Form page / name: ");
+    lines.push("When issue noticed: ");
+    lines.push("Form plugin (if known): ");
+    lines.push("Browser / device used for this test: ");
+    lines.push("");
+    lines.push("=== NEXT SAFE STEP ===");
     lines.push(rec.text);
     lines.push("");
     lines.push("Privacy note: this report was generated locally in the browser.");
