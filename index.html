@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>WordPress Enquiry Path Checklist — Free Diagnostic | QuietForgeTools</title>
+  <meta name="description" content="Free offline WordPress enquiry path checklist. Manually mark form, email, mobile, and delivery checks. Get a copyable diagnostic summary. No uploads, no accounts. QuietForgeTools." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <div class="brand"><span>QuietForgeTools</span> · Free diagnostic</div>
+    </div>
+  </header>
+
+  <main>
+    <div class="wrap hero">
+      <div class="free-chip">Free · runs in your browser · nothing uploaded</div>
+      <h1>WordPress Enquiry Path Checklist</h1>
+      <p class="lead">
+        A practical checklist for when a WordPress contact, enquiry, or quote form
+        seems broken. You mark each item yourself — this tool does
+        <strong>not</strong> scan or inspect your website automatically.
+      </p>
+      <div class="privacy" role="note">
+        <strong>Privacy:</strong> All answers stay in this browser tab.
+        Nothing is sent to a server, stored in cookies, or shared with analytics.
+        Closing or refreshing the page clears your marks (no localStorage).
+      </div>
+    </div>
+
+    <section id="checklist" aria-labelledby="checklist-heading">
+      <div class="wrap">
+        <h2 id="checklist-heading">Checklist</h2>
+        <p class="section-lead">Mark each item: Pass, Fail, Not sure, or N/A. Then generate your summary below.</p>
+        <form id="checklist-form" novalidate>
+          <ol class="checks" id="checks-list"></ol>
+        </form>
+      </div>
+    </section>
+
+    <section id="actions" aria-labelledby="actions-heading">
+      <div class="wrap">
+        <h2 id="actions-heading">Summary</h2>
+        <div class="action-row">
+          <button type="button" class="btn btn-primary" id="btn-generate">Generate diagnostic report</button>
+          <button type="button" class="btn btn-ghost" id="btn-copy" disabled>Copy report</button>
+          <button type="button" class="btn btn-ghost" id="btn-reset">Reset all</button>
+        </div>
+        <p class="copy-status" id="copy-status" aria-live="polite"></p>
+
+        <div id="results" class="results" hidden>
+          <div class="result-block">
+            <h3>Failed checks</h3>
+            <ul id="failed-list"></ul>
+            <p class="empty-note" id="failed-empty" hidden>None marked Fail.</p>
+          </div>
+          <div class="result-block">
+            <h3>Uncertain checks</h3>
+            <ul id="unsure-list"></ul>
+            <p class="empty-note" id="unsure-empty" hidden>None marked Not sure.</p>
+          </div>
+          <div class="result-block">
+            <h3>Recommended next investigation</h3>
+            <p id="recommendation" class="recommendation"></p>
+          </div>
+          <div class="result-block">
+            <h3>Full report</h3>
+            <pre id="report-text" class="report" tabindex="0"></pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" aria-labelledby="services-heading">
+      <div class="wrap">
+        <h2 id="services-heading">If you want help fixing it</h2>
+        <p class="section-lead">
+          The checklist above is free and complete on its own.
+          If you prefer a bounded fixed-price repair, these QuietForgeTools options exist:
+        </p>
+        <div class="grid services" id="service-cards">
+          <a class="card service" id="svc-149" href="https://mamonasr789-png.github.io/quietforgetools-enquiry-repair/">
+            <div class="tag">Enquiry / form path</div>
+            <h3>£149 Enquiry Path Repair</h3>
+            <p>One clearly defined broken enquiry, contact, or quote path — implement + test.</p>
+          </a>
+          <a class="card service" id="svc-59" href="https://mamonasr789-png.github.io/quietforgetools-wp-maintenance/">
+            <div class="tag">Updates / maintenance</div>
+            <h3>£59 Update &amp; Safety Check</h3>
+            <p>Backup check, sequenced updates, smoke tests, short completion report.</p>
+          </a>
+          <a class="card service" id="svc-49" href="https://mamonasr789-png.github.io/quietforgetools-wp-maintenance/quick-fix/">
+            <div class="tag">Small defined issue</div>
+            <h3>£49 WordPress Quick Fix</h3>
+            <p>One agreed problem: diagnosis, one fix attempt, verification, completion note.</p>
+          </a>
+        </div>
+        <p class="hint" id="service-hint"></p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <p>QuietForgeTools · WordPress Enquiry Path Checklist · free offline diagnostic</p>
+      <p class="foot-note">This page never claims automatic website inspection. You mark each check yourself.</p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
