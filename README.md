@@ -24,6 +24,14 @@ Answers stay in the current browser tab. No cookies, no analytics, no localStora
 - `styles.css` — layout (mobile-usable)
 - `app.js` — checklist logic and report generator
 
+## For web designers/agencies
+
+Need this checklist under your own brand for client handoffs? A customized white-label version is available for **£49** (static files you host; one revision included).
+
+- [White-Label WordPress Enquiry Checklist — £49](https://mamonasr789-png.github.io/quietforgetools/white-label-wordpress-checklist/)
+
+The free tool on this repository remains fully usable with no purchase required.
+
 ## Related fixed-price services (optional)
 
 - [£49 WordPress Quick Fix](https://mamonasr789-png.github.io/quietforgetools-wp-maintenance/quick-fix/)
